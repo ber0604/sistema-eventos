@@ -6,7 +6,7 @@ export default function Navbar() {
     <header className="navbar">
       <nav className="navbar-inner">
         {/* brand separado da lista de links */}
-        <div className="brand">CorpApps</div>
+        <div className="brand">Eventos</div>
         <ul className="nav-links">
           <li>
             <NavLink
@@ -18,7 +18,7 @@ export default function Navbar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/registro-usuario">Registro usuário</NavLink>
           </li>
           {!user && (
             <li>

@@ -4,8 +4,8 @@ import RequireAuth from "./auth/RequireAuth";
 import RequireRole from "./auth/RequireRole";
 import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Login from "./pages/Login";
+import CreateLogin from "./pages/CreateLogin";
 import Forbidden from "./pages/Forbidden";
 import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
@@ -25,8 +25,8 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Home /> },
-      { path: "about", element: <About /> },
       { path: "login", element: <Login /> },
+      { path: "registro-usuario", element: <CreateLogin /> },
       { path: "forbidden", element: <Forbidden /> },
       {
         path: "dashboard",

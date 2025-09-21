@@ -9,7 +9,7 @@ export default function RootLayout() {
       </main>
       <footer className="footer">
         <div className="footer-inner">
-          © {new Date().getFullYear()} CorpApps • IFRS
+          © {new Date().getFullYear()} Eventos • IFRS
         </div>
       </footer>
     </>

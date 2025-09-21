@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { http } from "../api/http";
 
@@ -21,9 +23,9 @@ export function AuthProvider({ children }) {
     }
     setLoading(false);
   }, []);
-  // Faz login chamando a API e salva sessão
-  async function login({ email, password }) {
-    const { data } = await http.post("/auth/login", { email, password });
+  
+  async function login({ email, senha }) {
+    const { data } = await http.post("users/auth/login", { email, senha });
     // Espera-se { token, user: { email, role } }
     if (!data?.token) throw new Error("Token ausente na resposta");
     localStorage.setItem("token", data.token);
@@ -37,6 +39,14 @@ export function AuthProvider({ children }) {
       setUser(null);
     }
   }
+  
+  // Faz login chamando a API e salva sessão
+  async function createLogin({ email, senha }) {
+    const { data } = await http.post("/users/register", { email, senha });
+    // Espera-se { token, user: { email, role } }
+    if (!data.id) throw new Error("Usuario nao criado");
+  }
+
   // Encerra sessão
   function logout() {
     localStorage.removeItem("token");
@@ -46,7 +56,7 @@ export function AuthProvider({ children }) {
   }
   // Valor do contexto memoizado (evita re-renders desnecessários)
   const value = useMemo(
-    () => ({ token, user, login, logout, loading }),
+    () => ({ token, user, login, createLogin, logout, loading }),
     [token, user, loading]
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

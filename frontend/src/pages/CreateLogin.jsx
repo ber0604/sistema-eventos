@@ -3,8 +3,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 import Button from "../components/Button";
 import FormInput from "../components/FormInput";
-export default function Login() {
-  const { login } = useAuth();
+
+export default function CreateLogin() {
+  const { createLogin } = useAuth();
   const navigate = useNavigate();
   const { state } = useLocation();
   const [form, setForm] = useState({ email: "", senha: "" });
@@ -20,17 +21,23 @@ export default function Login() {
     setErr("");
     setLoading(true);
     try {
-      await login(form); // chama AuthContext → POST /auth/login
-      navigate(state?.from?.pathname || "/dashboard", { replace: true });
+      await createLogin(form); // chama AuthContext → POST /auth/login
+      navigate(state?.from?.pathname || "/login", { replace: true });
+      alert('Usuário criado com sucesso! Faça o login.');
     } catch {
-      setErr("Credenciais inválidas");
+      if (err.response?.status === 409) {
+        setErr("Usuário já existe com esse e-mail");
+      } else {
+        setErr("Houve um erro ao criar o usuário");
+      }
     } finally {
       setLoading(false);
     }
   }
+
   return (
     <section className="card">
-      <h1>Login</h1>
+      <h1>Registro usuário</h1>
       {err && <p className="alert">{err}</p>}
       <form onSubmit={handleSubmit} className="form form--inline">
         <FormInput
@@ -52,7 +59,7 @@ export default function Login() {
           required
         />
         <Button type="submit" disabled={loading}>
-          {loading ? "Entrando..." : "Entrar"}
+          {loading ? "Criando usuário..." : "Registrar"}
         </Button>
       </form>
     </section>
