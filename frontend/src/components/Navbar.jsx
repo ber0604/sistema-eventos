@@ -28,11 +28,11 @@ export default function Navbar() {
           {user && (
             <>
               <li>
-                <NavLink to="/dashboard">Dashboard</NavLink>
+                <NavLink to="/dashboard">Eventos</NavLink>
               </li>
               {user.role === "admin" && (
                 <li>
-                  <NavLink to="/admin">Admin</NavLink>
+                  <NavLink to="/registro-evento">Criar evento</NavLink>
                 </li>
               )}
               <li>

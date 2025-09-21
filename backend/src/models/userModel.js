@@ -13,6 +13,14 @@ class UserModel {
     return rows[0];
   }
 
+  static async findByRole(role) {
+    const [rows] = await db.query("SELECT * FROM usuario WHERE role = ?", [
+      role,
+    ]);
+    return rows[0];
+  }
+
+
   static async create(user) {
     console.log(user);
     

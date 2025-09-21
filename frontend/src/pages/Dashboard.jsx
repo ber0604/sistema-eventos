@@ -5,7 +5,7 @@ export default function Dashboard() {
   const [msg, setMsg] = useState("Carregando...");
   useEffect(() => {
     http
-      .get("/protected/dashboard")
+      .get("/eventos/consultar")
       .then(({ data }) => setMsg(data.message))
       .catch(() => setMsg("Erro ao carregar eventos"));
   }, []);

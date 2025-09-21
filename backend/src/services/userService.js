@@ -5,15 +5,30 @@ const bcrypt = require("bcryptjs"); // Biblioteca para criptografia de senhas
 
 class UserService {
   static async createUser(user) {
-    const { email, senha } = user;
-    user.role = "user";
+    const { email, senha, role } = user;
+
     const existing = await UserModel.findByEmail(email);
     if (existing) {
       throw new Error("Usuário já existe");
     }
+
+    let userRole = "user";
+    if (role === "admin") {
+      const adminExists = await UserModel.findByRole("admin");
+      if (adminExists) {
+        throw new Error("Já existe um administrador cadastrado");
+      }
+      userRole = "admin";
+    }
+
     const hashed = await bcrypt.hash(senha, 10);
-    user.senha = hashed;
-    const id = await UserModel.create(user);
+
+    const id = await UserModel.create({
+      email,
+      senha: hashed,
+      role: userRole,
+    });
+
     return { message: "Usuário registrado com sucesso", id };
   }
 
