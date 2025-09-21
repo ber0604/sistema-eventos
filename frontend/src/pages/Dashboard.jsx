@@ -7,11 +7,11 @@ export default function Dashboard() {
     http
       .get("/protected/dashboard")
       .then(({ data }) => setMsg(data.message))
-      .catch(() => setMsg("Erro ao carregar painel"));
+      .catch(() => setMsg("Erro ao carregar eventos"));
   }, []);
   return (
     <section className="card">
-      <h1>Dashboard</h1>
+      <h1>Eventos cadastrados</h1>
       <p>{msg}</p>
     </section>
   );

@@ -21,7 +21,7 @@ export default function CreateLogin() {
     setErr("");
     setLoading(true);
     try {
-      await createLogin(form); // chama AuthContext → POST /auth/login
+      await createLogin(form); // chama AuthContext → POST /auth
       navigate(state?.from?.pathname || "/login", { replace: true });
       alert('Usuário criado com sucesso! Faça o login.');
     } catch {
