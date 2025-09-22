@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AuthProvider } from "./auth/AuthContext";
+import { EventoProvider } from "./auth/EventoContext";
 import RequireAuth from "./auth/RequireAuth";
 import RequireRole from "./auth/RequireRole";
 import RootLayout from "./layouts/RootLayout";
@@ -8,7 +9,7 @@ import Login from "./pages/Login";
 import CreateLogin from "./pages/CreateLogin";
 import Forbidden from "./pages/Forbidden";
 import Dashboard from "./pages/Dashboard";
-import Admin from "./pages/Admin";
+import CreateEvento from "./pages/CreateEvento";
 
 function NotFound() {
   return (
@@ -37,11 +38,11 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "admin",
+        path: "registro-evento",
         element: (
           <RequireAuth>
             <RequireRole role="admin">
-              <Admin />
+              <CreateEvento />
             </RequireRole>
           </RequireAuth>
         ),
@@ -54,7 +55,9 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <AuthProvider>
-      <RouterProvider router={router} />
+      <EventoProvider>
+        <RouterProvider router={router} />
+      </EventoProvider>
     </AuthProvider>
   );
 }

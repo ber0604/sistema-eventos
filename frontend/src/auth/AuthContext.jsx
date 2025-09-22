@@ -25,8 +25,6 @@ export function AuthProvider({ children }) {
   }, []);
   
   async function login({ email, senha }) {
-    console.log('oi');
-    
     const { data } = await http.post("/users/auth", { email, senha });
     // Espera-se { token, user: { email, role } }
     if (!data?.token) throw new Error("Token ausente na resposta");

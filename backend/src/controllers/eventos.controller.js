@@ -5,8 +5,10 @@ class EventosController {
   // Método estático que trata o cadastro de um novo usuário
   static async register(req, res) {
     try {
+      console.log('registrando');
+      
       // Chama o serviço para registrar o usuário, passando os dados da requisição
-      const result = await EventoService.create(req.body);
+      const result = await EventoService.createEvento(req.body);
       // Retorna status 201 (Criado) com os dados retornados pelo serviço
       return res.status(201).json(result);
     } catch (error) {
@@ -17,8 +19,6 @@ class EventosController {
   // Método estático que trata o login do usuário
   static async consultarEventos(req, res) {
     try {
-      console.log('oi');
-      
       // Chama o serviço para autenticar o usuário, passando os dados da requisição
       const result = await EventoService.buscarEventos(req.body);
       // Retorna status 200 (OK) com o token JWT

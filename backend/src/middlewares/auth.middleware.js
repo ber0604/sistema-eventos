@@ -14,18 +14,18 @@ function authenticateToken(req, res, next) {
     // Se o token for válido, adiciona os dados do usuário decodificados na
     req.user = user;
     // Passa para o próximo middleware ou rota
+    console.log('autenticado');
+    
     next();
   });
 }
-// Middleware para autorizar o acesso com base na função (role) do usuário
+
 function authorizeRole(role) {
-  return (req, res, next) => {
-    // Verifica se o usuário possui a role exigida
-    if (req.user.role !== role) {
-      // Se não tiver permissão, retorna status 403 (Acesso negado)
-      return res.status(403).json({ message: "Acesso negado" });
-    }
-    next();
+    return (req, res, next) => {
+      if (req.user.role !== role) {
+        return res.status(403).json({ message: "Acesso negado" });
+      }
+      next();
   };
 }
 
