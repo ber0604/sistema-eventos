@@ -3,7 +3,20 @@ const validateEmail = require("../utils/validateEmail");
 const jwt = require("jsonwebtoken"); // Biblioteca para geração de tokens JWT
 const bcrypt = require("bcryptjs"); // Biblioteca para criptografia de senhas
 
+/**
+ * Classe responsável pela lógica de negócio relacionada aos usuários.
+ */
 class UserService {
+  /**
+   * Cria um novo usuário no banco de dados.
+   * @async
+   * @param {Object} user - Dados do usuário a ser criado.
+   * @param {string} user.email - E-mail do usuário.
+   * @param {string} user.senha - Senha do usuário.
+   * @param {string} [user.role] - Role do usuário ('user' ou 'admin').
+   * @returns {Promise<Object>} Objeto com mensagem de sucesso e o ID do usuário criado.
+   * @throws {Error} Se o usuário já existir ou se já houver um admin cadastrado.
+   */
   static async createUser(user) {
     const { email, senha, role } = user;
 
@@ -32,6 +45,15 @@ class UserService {
     return { message: "Usuário registrado com sucesso", id };
   }
 
+  /**
+   * Faz login de um usuário, verificando e-mail e senha.
+   * @async
+   * @param {Object} credentials - Credenciais do usuário.
+   * @param {string} credentials.email - E-mail do usuário.
+   * @param {string} credentials.senha - Senha do usuário.
+   * @returns {Promise<Object>} Objeto contendo o token JWT e dados do usuário.
+   * @throws {Error} Se o usuário não for encontrado ou a senha for inválida.
+   */
   static async loginUser({ email, senha }) {
     // Busca o usuário pelo e-mail
     const user = await UserModel.findByEmail(email);
@@ -49,8 +71,9 @@ class UserService {
       process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
-    // Retorna o token e o usuário para o controller
+    // Retorna o token e o usuário
     return { token, user: { email: user.email, role: user.role } };
   }
 }
+
 module.exports = UserService;
