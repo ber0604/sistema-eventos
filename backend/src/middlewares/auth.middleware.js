@@ -14,8 +14,6 @@ function authenticateToken(req, res, next) {
     // Se o token for válido, adiciona os dados do usuário decodificados na
     req.user = user;
     // Passa para o próximo middleware ou rota
-    console.log('autenticado');
-    
     next();
   });
 }

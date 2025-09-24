@@ -22,8 +22,6 @@ class UserModel {
 
 
   static async create(user) {
-    console.log(user);
-    
     const { email, senha, role } = user;
     const [result] = await db.query(
       "INSERT INTO usuario (email, senha, role) VALUES (?, ?, ?)",

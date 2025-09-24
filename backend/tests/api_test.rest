@@ -1,0 +1,34 @@
+@baseURL = http://localhost:3000
+@bearerToken = COLOQUE_SEU_TOKEN_AQUI_SEM_ASPAS
+
+### Listar todos os eventos
+GET {{baseURL}}/eventos/consultar
+Authorization: Bearer {{bearerToken}}
+
+### Criar um novo evento
+POST {{baseURL}}/eventos/registrar
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+
+{
+ "titulo": "Musical Rock",
+ "data_evento": "2025-10-15"
+}
+
+### Criar um novo usuário
+POST {{baseURL}}/users/register
+Content-Type: application/json
+
+{
+ "email": "bernardo2@ifrs.com",
+ "senha": "123"
+}
+
+### Logar usuário
+POST {{baseURL}}/users/auth
+Content-Type: application/json
+
+{
+ "email": "admin@ifrs.com",
+ "senha": "123"
+}

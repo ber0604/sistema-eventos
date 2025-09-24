@@ -5,8 +5,6 @@ class EventosController {
   // Método estático que trata o cadastro de um novo usuário
   static async register(req, res) {
     try {
-      console.log('registrando');
-      
       // Chama o serviço para registrar o usuário, passando os dados da requisição
       const result = await EventoService.createEvento(req.body);
       // Retorna status 201 (Criado) com os dados retornados pelo serviço

@@ -7,7 +7,6 @@ class AuthController {
     try {
       // Chama o serviço para registrar o usuário, passando os dados da requisição
       const result = await UserService.createUser(req.body);
-      console.log(result);
       // Retorna status 201 (Criado) com os dados retornados pelo serviço
       return res.status(201).json(result);
     } catch (error) {
