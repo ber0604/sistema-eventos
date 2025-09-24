@@ -23,9 +23,8 @@ Este projeto é um sistema de gestão de eventos desenvolvido como parte de um t
 
 ## Instalação
 
-### Backend
-1. Clone o repositório:  
 ```bash
+1. Clone o repositório:  
 git clone https://github.com/ber0604/sistema-eventos.git
 
 2. Criar banco de dados que está no arquivo database.sql
@@ -37,3 +36,4 @@ npm install bcryptjs helmet cors dotenv react-router-dom axios express mysql2
 
 5. Entrar na pasta /frontend e na /backend em diferentes terminais e rodar o comando:
 npm run dev
+
