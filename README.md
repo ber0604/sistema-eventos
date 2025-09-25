@@ -34,7 +34,7 @@ git clone https://github.com/ber0604/sistema-eventos.git
 
 3. Configurar acesso banco de dados no arquivo .env
 
-4. Criar dependências:
+4. Criar dependências dentro das pastas /backend e /frontend:
 npm install bcryptjs helmet cors dotenv react-router-dom axios express mysql2
 
 5. Entrar na pasta /frontend e na /backend em diferentes terminais e rodar o comando:
@@ -43,6 +43,7 @@ npm run dev
 
 ## Testes
   Acessar arquivo backend/testes/api_test.rest
+
 
 
 
