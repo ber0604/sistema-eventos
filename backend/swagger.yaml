@@ -61,25 +61,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/Evento'
 
-  /eventos/registrar:
-    post:
-      summary: Criar um novo evento
-      security:
-        - bearerAuth: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Evento'
-      responses:
-        '201':
-          description: Evento criado com sucesso
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Evento'
-
   /eventos/{id}:
     delete:
       summary: Excluir um evento pelo ID

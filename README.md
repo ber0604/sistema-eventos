@@ -7,7 +7,7 @@ https://drive.google.com/drive/folders/1ux9UgKTC_5JvytqPLbcF7a3IwY-1FqUw?usp=dri
 Este projeto é um sistema de gestão de eventos desenvolvido como parte de um trabalho acadêmico. Ele possui integração entre **frontend** e **backend**, oferecendo funcionalidades de **login, logout, registro de usuários** e controle de permissões (roles).  
 
 - Usuários com role `user` podem visualizar a lista de eventos cadastrados.  
-- Usuários com role `admin` podem cadastrar novos eventos.  
+- Usuários com role `admin` podem cadastrar novos eventos, remover eventos e ver voluntários cadastrados.  
 - O registro de um usuário admin é feito automaticamente na primeira execução do projeto, se não existir um admin cadastrado.
 
 ## Funcionalidades
@@ -15,7 +15,7 @@ Este projeto é um sistema de gestão de eventos desenvolvido como parte de um t
 - Logout seguro.  
 - Controle de roles (`user` e `admin`).  
 - Listagem de eventos para usuários comuns.  
-- Cadastro de eventos apenas para administradores.  
+- Cadastro de eventos, exclusão de eventos e listagem de usuários apenas para administradores.  
 - Criação automática do usuário admin na primeira execução.
 
 ## Tecnologias Utilizadas

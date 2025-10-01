@@ -7,7 +7,6 @@ export default function Dashboard() {
   const [eventos, setEventos] = useState([]);
   const { user } = useAuth();
 
-
   useEffect(() => {
     carregarEventos();
   }, []);

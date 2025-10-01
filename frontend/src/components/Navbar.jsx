@@ -35,6 +35,11 @@ export default function Navbar() {
                   <NavLink to="/registro-evento">Criar evento</NavLink>
                 </li>
               )}
+              {user.role === "admin" && (
+                <li>
+                  <NavLink to="/voluntarios">Voluntários</NavLink>
+                </li>
+              )}
               <li>
                 <button className="btn" onClick={logout}>
                   Logout

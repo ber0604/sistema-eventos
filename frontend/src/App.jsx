@@ -10,6 +10,7 @@ import CreateLogin from "./pages/CreateLogin";
 import Forbidden from "./pages/Forbidden";
 import Dashboard from "./pages/Dashboard";
 import CreateEvento from "./pages/CreateEvento";
+import Voluntarios from "./pages/Voluntarios";
 
 function NotFound() {
   return (
@@ -43,6 +44,16 @@ const router = createBrowserRouter([
           <RequireAuth>
             <RequireRole role="admin">
               <CreateEvento />
+            </RequireRole>
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "voluntarios",
+        element: (
+          <RequireAuth>
+            <RequireRole role="admin">
+              <Voluntarios />
             </RequireRole>
           </RequireAuth>
         ),

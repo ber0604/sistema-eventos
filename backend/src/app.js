@@ -6,6 +6,7 @@ const helmet = require('helmet');
 // Importa o middleware de segurança que adiciona cabeçalhos HTTP para proteger
 const userRoutes = require('./routes/userRoutes');
 const eventoRoutes = require('./routes/eventoRoutes');
+const voluntarioRoutes = require('./routes/voluntarioRoutes');
 // Importa as rotas relacionadas aos usuários
 const errorMiddleware = require('./middlewares/errorMiddleware');
 // Importa o middleware para tratamento centralizado de erros
@@ -21,6 +22,7 @@ app.use(express.json());
 // Rotas da aplicação
 app.use('/users', userRoutes);
 app.use('/eventos', eventoRoutes);
+app.use('/voluntarios', voluntarioRoutes);
 // Define que todas as requisições iniciadas com /users serão encaminhadas para
 // Middleware de tratamento de erros (deve ser adicionado depois das rotas)
 app.use(errorMiddleware);

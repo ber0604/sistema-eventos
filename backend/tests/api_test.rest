@@ -1,9 +1,13 @@
 @baseURL = http://localhost:3000
-@bearerToken = COLOQUE_SEU_TOKEN_AQUI_SEM_ASPAS
+@bearerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGlmcnMuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU5MzYxNzY5LCJleHAiOjE3NTkzNjUzNjl9.ZoRCA0J_UwboAghzBzVoj8k3OfFHOcIw3tw3SmGZtgQ
 
 ### Listar todos os eventos
 GET {{baseURL}}/eventos/consultar
 Authorization: Bearer {{bearerToken}}
+
+### Listar todos os usuarios
+GET {{baseURL}}/voluntarios
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGlmcnMuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU5MzYxNzY5LCJleHAiOjE3NTkzNjUzNjl9.ZoRCA0J_UwboAghzBzVoj8k3OfFHOcIw3tw3SmGZtgQ
 
 ### Criar um novo evento
 POST {{baseURL}}/eventos/registrar
