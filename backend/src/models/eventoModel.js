@@ -13,6 +13,18 @@ class EventoModel {
     const [rows] = await db.query("SELECT * FROM evento;");
     return rows;
   }
+  
+   /**
+   * Exclui um evento pelo ID no banco de dados.
+   * @async
+   * @param {number} id - ID do evento a ser excluído.
+   * @returns {Promise<boolean>} Retorna true se um evento foi excluído, false caso não exista.
+   */
+  static async delete(id) {
+    const [result] = await db.query("DELETE FROM evento WHERE id = ?;", [id]);
+    // result.affectedRows indica quantas linhas foram afetadas
+    return result.affectedRows > 0;
+  }
 
   /**
    * Cria um novo evento no banco de dados.

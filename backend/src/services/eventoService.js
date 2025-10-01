@@ -36,6 +36,17 @@ class EventoService {
     }
     return { eventos };
   }
+
+  /**
+   * Exclui um evento pelo ID.
+   * @async
+   * @param {number} id - ID do evento a ser excluído.
+   * @returns {Promise<boolean>} Retorna true se excluiu, false se não encontrou.
+   */
+  static async deleteEvento(id) {
+    const deleted = await EventoModel.delete(id);
+    return deleted;
+  }
 }
 
 module.exports = EventoService;
