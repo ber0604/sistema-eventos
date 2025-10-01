@@ -41,8 +41,8 @@ export function AuthProvider({ children }) {
   }
   
   // Faz login chamando a API e salva sessão
-  async function createLogin({ email, senha }) {
-    const { data } = await http.post("/users/register", { email, senha });
+  async function createLogin({ nome, telefone, email, senha }) {
+    const { data } = await http.post("/users/register", { nome, telefone, email, senha });
     // Espera-se { token, user: { email, role } }
     if (!data.id) throw new Error("Usuario nao criado");
   }

@@ -20,6 +20,8 @@ POST {{baseURL}}/users/register
 Content-Type: application/json
 
 {
+ "nome": "bernardo",
+ "telefone": "549999999999",
  "email": "bernardo2@ifrs.com",
  "senha": "123"
 }

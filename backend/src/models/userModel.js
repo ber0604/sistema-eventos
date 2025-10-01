@@ -44,16 +44,18 @@ class UserModel {
    * Cria um novo usuário no banco de dados.
    * @async
    * @param {Object} user - Dados do usuário a ser criado.
+   * @param {string} user.nome - Nome do usuário.
+   * @param {string} user.telefone - Tekefone do usuário.
    * @param {string} user.email - E-mail do usuário.
    * @param {string} user.senha - Senha do usuário (deve estar hashada).
    * @param {string} user.role - Role do usuário (ex: 'user', 'admin').
    * @returns {Promise<number>} ID do usuário criado.
    */
-  static async create(user) {
-    const { email, senha, role } = user;
+  static async create(user) {    
+    const { nome, telefone, email, senha, role } = user;
     const [result] = await db.query(
-      "INSERT INTO usuario (email, senha, role) VALUES (?, ?, ?)",
-      [email, senha, role]
+      "INSERT INTO usuario (nome, telefone, email, senha, role) VALUES (?, ?, ?, ?, ?)",
+      [nome, telefone, email, senha, role]
     );
     return result.insertId; // Retorna o ID do usuário criado
   }

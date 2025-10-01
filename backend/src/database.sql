@@ -4,6 +4,8 @@ USE sistema_eventos;
 
 CREATE TABLE usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(150) UNIQUE NOT NULL,
+    telefone VARCHAR(30) unique not null,
     email VARCHAR(150) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL,
     role VARCHAR(255) NOT NULL,

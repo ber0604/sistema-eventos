@@ -31,6 +31,12 @@ components:
     Usuario:
       type: object
       properties:
+        nome:
+          type: string
+          example: Bernardo Faccini
+        telefone:
+          type: string
+          example: "+55 11 91234-5678"
         email:
           type: string
           example: bernardo@ifrs.com
@@ -73,6 +79,51 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Evento'
+
+  /eventos/{id}:
+    delete:
+      summary: Excluir um evento pelo ID
+      description: Remove um evento existente. Requer token JWT.
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID do evento a ser excluído
+      responses:
+        '200':
+          description: Evento excluído com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Evento excluído com sucesso
+        '404':
+          description: Evento não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Evento não encontrado
+        '500':
+          description: Erro interno do servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Erro ao excluir evento
 
   /users/register:
     post:

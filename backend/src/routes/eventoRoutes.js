@@ -7,7 +7,7 @@ const EventosController = require('../controllers/eventos.controller.js');
 const router = express.Router();
 
 router.get('/consultar', authenticateToken, EventosController.consultarEventos);
-router.delete('/:id', authenticateToken, EventosController.excluirEvento);
+router.delete('/:id', authenticateToken, authorizeRole('admin'), EventosController.excluirEvento);
 router.post('/registrar', authenticateToken, authorizeRole('admin'), EventosController.register);
 
 module.exports = router;

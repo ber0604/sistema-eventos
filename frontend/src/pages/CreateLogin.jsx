@@ -8,7 +8,7 @@ export default function CreateLogin() {
   const { createLogin } = useAuth();
   const navigate = useNavigate();
   const { state } = useLocation();
-  const [form, setForm] = useState({ email: "", senha: "" });
+  const [form, setForm] = useState({ nome: "", telefone: "", email: "", senha: "" });
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -40,6 +40,25 @@ export default function CreateLogin() {
       <h1>Registro usuário</h1>
       {err && <p className="alert">{err}</p>}
       <form onSubmit={handleSubmit} className="form form--inline">
+         <FormInput
+          label="Nome"
+          type="nome"
+          name="nome"
+          value={form.nome}
+          placeholder="Bernardo"
+          onChange={updateField}
+          required
+        />
+        <FormInput
+          label="Telefone"
+          type="telefone"
+          name="telefone"
+          value={form.telefone}
+          limit="30"
+          placeholder="549999999999"
+          onChange={updateField}
+          required
+        />
         <FormInput
           label="E-mail"
           type="email"

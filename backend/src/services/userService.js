@@ -18,8 +18,8 @@ class UserService {
    * @throws {Error} Se o usuário já existir ou se já houver um admin cadastrado.
    */
   static async createUser(user) {
-    const { email, senha, role } = user;
-
+    const { nome, telefone, email, senha, role } = user;
+    
     const existing = await UserModel.findByEmail(email);
     if (existing) {
       throw new Error("Usuário já existe");
@@ -37,6 +37,8 @@ class UserService {
     const hashed = await bcrypt.hash(senha, 10);
 
     const id = await UserModel.create({
+      nome,
+      telefone,
       email,
       senha: hashed,
       role: userRole,

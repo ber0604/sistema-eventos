@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { http } from "../api/http";
+import { useAuth } from "../auth/AuthContext";
 
 export default function Dashboard() {
   const [msg, setMsg] = useState("Carregando...");
   const [eventos, setEventos] = useState([]);
+  const { user } = useAuth();
+
 
   useEffect(() => {
     carregarEventos();
@@ -47,7 +50,9 @@ export default function Dashboard() {
             <th>Título</th>
             <th>Data do evento</th>
             <th>Criação evento</th>
-            <th>Ações</th>
+            {user.role === "admin" && (
+              <th>Ações</th>
+            )}
           </tr>
         </thead>
         <tbody>
@@ -62,7 +67,7 @@ export default function Dashboard() {
               <td>{evento.titulo}</td>
               <td>{new Date(evento.data_evento).toLocaleDateString()}</td>
               <td>{new Date(evento.criado_em).toLocaleDateString()}</td>
-              <td>
+              {user.role === "admin" && ( <td>
                 <button
                   onClick={() => excluirEvento(evento.id)}
                   style={{
@@ -74,7 +79,7 @@ export default function Dashboard() {
                 >
                   🗑️
                 </button>
-              </td>
+              </td>)}
             </tr>
           ))}
         </tbody>
