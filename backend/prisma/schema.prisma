@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model usuario {
+  id        Int      @id @default(autoincrement())
+  nome      String   @unique @db.VarChar(150)
+  telefone  String   @unique @db.VarChar(30)
+  email     String   @unique @db.VarChar(150)
+  senha     String   @db.VarChar(255)
+  role      String   @db.VarChar(255)
+  criado_em DateTime @default(now())
+
+  eventosVoluntario evento_voluntario[]
+}
+
+model evento {
+  id          Int      @id @default(autoincrement())
+  titulo      String   @db.VarChar(150)
+  data_evento DateTime @db.Date
+  criado_em   DateTime @default(now())
+
+  voluntarios evento_voluntario[]
+}
+
+model evento_voluntario {
+  id        Int @id @default(autoincrement())
+  evento_id Int
+
+  evento    evento   @relation(fields: [evento_id], references: [id], onDelete: Cascade)
+  usuario   usuario? @relation(fields: [usuarioId], references: [id])
+  usuarioId Int?
+}

@@ -8,6 +8,8 @@ const userRoutes = require('./routes/userRoutes');
 const eventoRoutes = require('./routes/eventoRoutes');
 const voluntarioRoutes = require('./routes/voluntarioRoutes');
 // Importa as rotas relacionadas aos usuários
+
+const loggerMiddleware = require('./middlewares/log.middleware');
 const errorMiddleware = require('./middlewares/errorMiddleware');
 // Importa o middleware para tratamento centralizado de erros
 const app = express();
@@ -26,5 +28,7 @@ app.use('/voluntarios', voluntarioRoutes);
 // Define que todas as requisições iniciadas com /users serão encaminhadas para
 // Middleware de tratamento de erros (deve ser adicionado depois das rotas)
 app.use(errorMiddleware);
+app.use(loggerMiddleware);
+    
 // Middleware que captura e trata erros, enviando respostas ao cliente
 module.exports = app;

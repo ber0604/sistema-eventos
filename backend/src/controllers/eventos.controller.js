@@ -1,65 +1,94 @@
 const EventoService = require("../services/eventoService");
+const logger = require("../config/logger"); // Winston
 
-/**
- * Controlador responsável por lidar com requisições relacionadas aos eventos.
- */
 class EventosController {
+
   /**
-   * Trata o cadastro de um novo evento.
-   * @async
-   * @param {import("express").Request} req - Objeto da requisição HTTP, com `body` contendo os dados do evento.
-   * @param {import("express").Response} res - Objeto da resposta HTTP.
-   * @returns {Promise<import("express").Response>} Resposta HTTP com status 201 e dados do evento criado ou 409 em caso de erro.
+   * Cadastro de evento
    */
   static async register(req, res) {
+    logger.info("Requisição recebida: POST /eventos", {
+      ip: req.ip,
+      body: req.body
+    });
+
     try {
       const result = await EventoService.createEvento(req.body);
+
+      logger.info("Evento criado com sucesso", {
+        id: result.id,
+        titulo: req.body.titulo
+      });
+
       return res.status(201).json(result);
     } catch (error) {
+      logger.error("Erro ao criar evento", {
+        error: error.message,
+        body: req.body
+      });
+
       return res.status(409).json({ message: error.message });
     }
   }
 
   /**
-   * Trata a exclusão de um evento existente.
-   * @async
-   * @param {import("express").Request} req - Objeto da requisição HTTP, com `params.id` contendo o ID do evento.
-   * @param {import("express").Response} res - Objeto da resposta HTTP.
-   * @returns {Promise<import("express").Response>} Resposta HTTP com status 200 se excluído, 404 se não encontrado, ou 500 em caso de erro.
+   * Exclusão de evento
    */
   static async excluirEvento(req, res) {
-    try {
-      const { id } = req.params;
+    const { id } = req.params;
 
+    logger.info("Requisição recebida: DELETE /eventos/:id", {
+      id,
+      ip: req.ip
+    });
+
+    try {
       const deleted = await EventoService.deleteEvento(id);
 
       if (!deleted) {
+        logger.warn("Tentativa de excluir evento inexistente", { id });
+
         return res.status(404).json({ message: "Evento não encontrado" });
       }
 
+      logger.info("Evento excluído com sucesso", { id });
+
       return res.status(200).json({ message: "Evento excluído com sucesso" });
     } catch (error) {
-      console.error(error);
+      logger.error("Erro ao excluir evento", {
+        id,
+        error: error.message
+      });
+
       return res.status(500).json({ message: "Erro ao excluir evento" });
     }
   }
 
   /**
-   * Consulta todos os eventos cadastrados.
-   * @async
-   * @param {import("express").Request} req - Objeto da requisição HTTP.
-   * @param {import("express").Response} res - Objeto da resposta HTTP.
-   * @returns {Promise<import("express").Response>} Resposta HTTP com status 200 e um objeto `{ eventos: Array<Object> }` ou 404/500 em caso de erro.
+   * Consulta de eventos
    */
   static async consultarEventos(req, res) {
+    logger.info("Requisição recebida: GET /eventos", {
+      ip: req.ip
+    });
+
     try {
-      const result = await EventoService.buscarEventos(req.body);
+      const result = await EventoService.buscarEventos();
+
+      logger.info("Eventos consultados com sucesso", {
+        total: result.eventos.length
+      });
+
       return res.status(200).json(result);
     } catch (error) {
       const status =
-        error.message === "Não possui eventos cadastrados"
-          ? 404
-          : 500; 
+        error.message === "Não possui eventos cadastrados" ? 404 : 500;
+
+      logger.error("Erro ao consultar eventos", {
+        status,
+        error: error.message
+      });
+
       return res.status(status).json({ message: error.message });
     }
   }

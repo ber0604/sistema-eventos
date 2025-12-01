@@ -1,58 +1,89 @@
 const UserService = require("../services/userService");
+const logger = require("../config/logger"); // importe seu logger Winston
 
-/**
- * Controlador responsável por lidar com requisições de autenticação (registro e login de usuários).
- */
 class AuthController {
   /**
-   * Trata o registro de um novo usuário.
-   * @async
-   * @param {import("express").Request} req - Objeto da requisição HTTP, com `body` contendo os dados do usuário.
-   * @param {import("express").Response} res - Objeto da resposta HTTP.
-   * @returns {Promise<import("express").Response>} Resposta HTTP com status 201 e dados do usuário criado ou 409 em caso de conflito.
+   * Registro de usuário
    */
   static async register(req, res) {
+    logger.info("Requisição recebida: POST /register", {
+      email: req.body.email,
+      ip: req.ip
+    });
+
     try {
       const result = await UserService.createUser(req.body);
+
+      logger.info("Usuário registrado com sucesso", {
+        id: result.id,
+        email: req.body.email
+      });
+
       return res.status(201).json(result);
     } catch (error) {
+      logger.error("Erro ao registrar usuário", {
+        email: req.body.email,
+        error: error.message
+      });
+
       return res.status(409).json({ message: error.message });
     }
   }
 
   /**
-   * Trata a consulta de usuários.
-   * @async
-   * @param {import("express").Request} req - Objeto da requisição HTTP, com `body` contendo os dados do usuário.
-   * @param {import("express").Response} res - Objeto da resposta HTTP.
-   * @returns {Promise<import("express").Response>} Resposta HTTP com status 201 e dados do usuário criado ou 409 em caso de conflito.
+   * Consulta usuários
    */
   static async consultarUsuarios(req, res) {
+    logger.info("Requisição recebida: GET /usuarios", { ip: req.ip });
+
     try {
       const result = await UserService.getUsers();
+
+      logger.info("Usuários consultados com sucesso", {
+        total: result.length
+      });
+
       return res.status(200).json(result);
     } catch (error) {
+      logger.error("Erro ao consultar usuários", {
+        error: error.message
+      });
+
       return res.status(409).json({ message: error.message });
     }
   }
 
   /**
-   * Trata o login de um usuário existente.
-   * @async
-   * @param {import("express").Request} req - Objeto da requisição HTTP, com `body` contendo `email` e `senha`.
-   * @param {import("express").Response} res - Objeto da resposta HTTP.
-   * @returns {Promise<import("express").Response>} Resposta HTTP com status 200 e objeto `{ token, user }` em caso de sucesso, ou 401/500 em caso de erro.
+   * Login de usuário
    */
   static async login(req, res) {
+    logger.info("Requisição recebida: POST /login", {
+      email: req.body.email,
+      ip: req.ip
+    });
+
     try {
       const result = await UserService.loginUser(req.body);
-      return res.status(200).json(result); // envia { token, user }
+
+      logger.info("Login bem-sucedido", {
+        email: result.user.email,
+        role: result.user.role
+      });
+
+      return res.status(200).json(result); // retorna {token, user}
     } catch (error) {
       const status =
         error.message === "Usuário não encontrado" ||
         error.message === "Senha inválida"
           ? 401
           : 500;
+
+      logger.error("Erro ao realizar login", {
+        email: req.body.email,
+        status,
+        error: error.message
+      });
+
       return res.status(status).json({ message: error.message });
     }
   }

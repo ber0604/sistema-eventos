@@ -1,51 +1,58 @@
 const EventoModel = require("../models/eventoModel");
+const logger = require("../config/logger");
 
-/**
- * Classe responsável pela lógica de negócio relacionada aos eventos.
- */
 class EventoService {
-  
-  /**
-   * Cria um novo evento e salva no banco de dados.
-   * @async
-   * @param {Object} evento - Dados do evento a ser criado.
-   * @param {string} evento.titulo - Título do evento.
-   * @param {string} evento.data_evento - Data do evento (formato YYYY-MM-DD).
-   * @returns {Promise<Object>} Objeto com mensagem de sucesso e o ID do evento criado.
-   * @throws {Error} Caso ocorra algum problema ao criar o evento.
-   */
   static async createEvento(evento) {
-    const { titulo, data_evento } = evento;
+    logger.info({ action: "createEvento_start", evento });
+
     const criado_em = new Date().toISOString().slice(0, 19).replace("T", " ");
     evento.criado_em = criado_em;
 
-    const id = await EventoModel.create(evento);
-    return { message: "Evento registrado com sucesso", id };
-  }
-
-  /**
-   * Busca todos os eventos cadastrados no banco de dados.
-   * @async
-   * @returns {Promise<Object>} Objeto contendo um array de eventos.
-   * @throws {Error} Caso não existam eventos cadastrados.
-   */
-  static async buscarEventos() {
-    const eventos = await EventoModel.findAll();
-    if (!eventos || eventos.length === 0) {
-      throw new Error("Não possui eventos cadastrados");
+    try {
+      const id = await EventoModel.create(evento);
+      logger.info({ action: "createEvento_success", id });
+      return { message: "Evento registrado com sucesso", id };
+    } catch (error) {
+      logger.error({ action: "createEvento_error", error: error.message });
+      throw error;
     }
-    return { eventos };
   }
 
-  /**
-   * Exclui um evento pelo ID.
-   * @async
-   * @param {number} id - ID do evento a ser excluído.
-   * @returns {Promise<boolean>} Retorna true se excluiu, false se não encontrou.
-   */
+  static async buscarEventos() {
+    logger.info({ action: "buscarEventos_start" });
+
+    try {
+      const eventos = await EventoModel.findAll();
+      if (!eventos || eventos.length === 0) {
+        logger.warn({ action: "buscarEventos_empty" });
+        throw new Error("Não possui eventos cadastrados");
+      }
+
+      logger.info({ action: "buscarEventos_success", total: eventos.length });
+      return { eventos };
+    } catch (error) {
+      logger.error({ action: "buscarEventos_error", error: error.message });
+      throw error;
+    }
+  }
+
   static async deleteEvento(id) {
-    const deleted = await EventoModel.delete(id);
-    return deleted;
+    logger.info({ action: "deleteEvento_start", id });
+
+    try {
+      const deleted = await EventoModel.delete(id);
+
+      if (!deleted) {
+        logger.warn({ action: "deleteEvento_not_found", id });
+        return false;
+      }
+
+      logger.info({ action: "deleteEvento_success", id });
+      return true;
+    } catch (error) {
+      logger.error({ action: "deleteEvento_error", id, error: error.message });
+      throw error;
+    }
   }
 }
 

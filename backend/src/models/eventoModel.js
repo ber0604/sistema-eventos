@@ -1,7 +1,8 @@
-const db = require("../config/database");
+const { PrismaClient } = require("../generated/prisma");
+const prisma = new PrismaClient();
 
 /**
- * Classe responsável por interagir com a tabela de eventos no banco de dados.
+ * Classe responsável por interagir com a tabela de eventos no banco de dados via Prisma.
  */
 class EventoModel {
   /**
@@ -10,20 +11,26 @@ class EventoModel {
    * @returns {Promise<Array<Object>>} Uma lista de objetos representando os eventos.
    */
   static async findAll() {
-    const [rows] = await db.query("SELECT * FROM evento;");
-    return rows;
+    return await prisma.evento.findMany();
   }
-  
-   /**
+
+  /**
    * Exclui um evento pelo ID no banco de dados.
    * @async
    * @param {number} id - ID do evento a ser excluído.
    * @returns {Promise<boolean>} Retorna true se um evento foi excluído, false caso não exista.
    */
   static async delete(id) {
-    const [result] = await db.query("DELETE FROM evento WHERE id = ?;", [id]);
-    // result.affectedRows indica quantas linhas foram afetadas
-    return result.affectedRows > 0;
+    try {
+      await prisma.evento.delete({
+        where: { id },
+      });
+      return true;
+    } catch (error) {
+      // Prisma lança erro se não encontrar — tratamos isso como "não existe"
+      if (error.code === "P2025") return false;
+      throw error;
+    }
   }
 
   /**
@@ -32,16 +39,21 @@ class EventoModel {
    * @param {Object} evento - Dados do evento a ser criado.
    * @param {string} evento.titulo - Título do evento.
    * @param {string} evento.data_evento - Data do evento (formato YYYY-MM-DD).
-   * @param {string} evento.criado_em - Data/hora de criação do evento.
+   * @param {string} [evento.criado_em] - Data/hora de criação do evento (opcional).
    * @returns {Promise<number>} ID do evento criado.
    */
   static async create(evento) {
     const { titulo, data_evento, criado_em } = evento;
-    const [result] = await db.query(
-      "INSERT INTO evento (titulo, data_evento, criado_em) VALUES (?, ?, ?)",
-      [titulo, data_evento, criado_em]
-    );
-    return result.insertId; // Retorna o ID do evento criado
+
+    const novoEvento = await prisma.evento.create({
+      data: {
+        titulo,
+        data_evento: new Date(data_evento),
+        criado_em: criado_em ? new Date(criado_em) : undefined,
+      },
+    });
+
+    return novoEvento.id;
   }
 }
 

@@ -1,11 +1,7 @@
 require("dotenv").config(); // Carrega variáveis de ambiente
 const app = require("./src/app");
-const createAdminIfNotExists = require("./src/utils/adminUser.js");
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
-
-// Cria admin se não existir
-createAdminIfNotExists();
 
 // Carrega o arquivo Swagger
 const swaggerDocument = YAML.load("./swagger.yaml");
