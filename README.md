@@ -1,7 +1,10 @@
 # Sistema de Gestão de Eventos
 
-## Vídeo apresentação
+## Vídeo apresentação PT 1
 https://drive.google.com/drive/folders/1ux9UgKTC_5JvytqPLbcF7a3IwY-1FqUw?usp=drive_link
+
+## Vídeo apresentação PT 2
+https://drive.google.com/file/d/1Du9Qltpz4CHOUys4rkg0RCKwJWh8EaHv/view?usp=sharing
 
 ## Descrição
 Este projeto é um sistema de gestão de eventos desenvolvido como parte de um trabalho acadêmico. Ele possui integração entre **frontend** e **backend**, oferecendo funcionalidades de **login, logout, registro de usuários** e controle de permissões (roles).  
@@ -47,6 +50,7 @@ npx prisma db seed
 
 ## Testes
   Acessar rota (http://localhost:${PORT}/api-docs) e utilizar o Swagger para testes da API Backend
+
 
 
 
