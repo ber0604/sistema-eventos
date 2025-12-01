@@ -39,7 +39,6 @@ npm install bcryptjs helmet cors dotenv react-router-dom axios express mysql2 sw
 
 5. Entrar na pasta /frontend e na /backend em diferentes terminais e rodar o comando:
 npm run dev
-```
 
 6. Entrar na pasta /backend em outro terminal:
 npx prisma migrate dev --name init
@@ -48,6 +47,7 @@ npx prisma db seed
 
 ## Testes
   Acessar rota (http://localhost:${PORT}/api-docs) e utilizar o Swagger para testes da API Backend
+
 
 
 
