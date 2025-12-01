@@ -57,7 +57,6 @@ describe("UserService - createUser", () => {
 describe("UserService - loginUser", () => {
   afterEach(() => jest.clearAllMocks());
 
-  // 🎯 SUCESSO
   it("deve fazer login com sucesso e retornar token", async () => {
     UserModel.findByEmail.mockResolvedValue({
       email: "teste@a.com",
