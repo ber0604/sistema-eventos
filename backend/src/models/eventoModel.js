@@ -25,6 +25,7 @@ class EventoModel {
       await prisma.evento.delete({
         where: { id: Number(id) }
       });
+      
       return true;
     } catch (error) {
       if (error.code === "P2025") return false;
