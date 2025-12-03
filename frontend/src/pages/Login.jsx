@@ -37,6 +37,7 @@ export default function Login() {
           label="E-mail"
           type="email"
           name="email"
+          id="email"
           value={form.email}
           placeholder="usuario@ifrs.edu.br"
           onChange={updateField}
@@ -46,6 +47,7 @@ export default function Login() {
           label="Senha"
           type="senha"
           name="senha"
+          id="senha"
           value={form.senha}
           placeholder="••••••"
           onChange={updateField}

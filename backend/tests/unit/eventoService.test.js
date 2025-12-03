@@ -1,7 +1,7 @@
 const EventoService = require("../../src/services/eventoService");
 const EventoModel = require("../../src/models/eventoModel");
 
-jest.mock("../src/models/eventoModel");
+jest.mock("../../src/models/eventoModel");
 
 describe("EventoService - createEvento", () => {
   afterEach(() => jest.clearAllMocks());

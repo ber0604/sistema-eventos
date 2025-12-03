@@ -1,13 +1,13 @@
 const request = require("supertest");
-const app = require("../../app");
+const app = require("../../src/app");
 
-jest.mock("../../services/userService", () => ({
+jest.mock("../../src/services/userService", () => ({
   createUser: jest.fn(),
   loginUser: jest.fn(),
   getUsers: jest.fn(),
 }));
 
-const UserService = require("../../services/userService");
+const UserService = require("../../src/services/userService");
 
 describe("AUTH", () => {
   afterEach(() => jest.clearAllMocks());

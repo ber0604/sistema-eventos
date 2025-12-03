@@ -1,14 +1,14 @@
 const request = require("supertest");
-const app = require("../../app");
+const app = require("../../src/app");
 
 describe("GET /voluntarios", () => {
   test("sucesso - admin autorizado", async () => {
-    const tokenAdmin = "Bearer token_admin_valido";
-
+    const tokenAdmin = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGlmcnMuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzY0Nzk5MjQ4LCJleHAiOjE3NjQ4MDI4NDh9.6_xv_wkNrAPohW2g44fOOUW6WW31zHBFATlmcd-i2Uc"; // sem quebras de linha
+  
     const res = await request(app)
       .get("/voluntarios")
-      .set("Authorization", tokenAdmin);
-
+      .set("Authorization", tokenAdmin.trim());
+  
     expect(res.status).toBe(200);
   });
 

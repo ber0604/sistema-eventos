@@ -1,15 +1,15 @@
 const request = require("supertest");
-const app = require("../../app");
+const app = require("../../src/app");
 
-jest.mock("../../services/eventoService", () => ({
+jest.mock("../../src/services/eventoService", () => ({
   createEvento: jest.fn(),
   buscarEventos: jest.fn(),
   deleteEvento: jest.fn(),
 }));
 
-const EventoService = require("../../services/eventoService");
+const EventoService = require("../../src/services/eventoService");
 
-jest.mock("../../middlewares/auth.middleware", () => ({
+jest.mock("../../src/middlewares/auth.middleware", () => ({
   authenticateToken: (req, res, next) => next(),
   authorizeRole: () => (req, res, next) => next(),
 }));

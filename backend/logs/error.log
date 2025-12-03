@@ -1,0 +1,180 @@
+{"level":"error","message":{"action":"deleteEvento_error","error":"\nInvalid `prisma.evento.delete()` invocation in\nC:\\Users\\bernardo.060404.BENTO\\sistema-eventos\\backend\\src\\models\\eventoModel.js:25:33\n\n  22  */\n  23 static async delete(id) {\n  24   try {\n→ 25     await prisma.evento.delete({\n           where: {\n             id: \"2\"\n                 ~~~\n           }\n         })\n\nArgument `id`: Invalid value provided. Expected Int, provided String.","id":"2"},"timestamp":"2025-12-03T22:01:25.490Z"}
+{"error":"\nInvalid `prisma.evento.delete()` invocation in\nC:\\Users\\bernardo.060404.BENTO\\sistema-eventos\\backend\\src\\models\\eventoModel.js:25:33\n\n  22  */\n  23 static async delete(id) {\n  24   try {\n→ 25     await prisma.evento.delete({\n           where: {\n             id: \"2\"\n                 ~~~\n           }\n         })\n\nArgument `id`: Invalid value provided. Expected Int, provided String.","id":"2","level":"error","message":"Erro ao excluir evento","timestamp":"2025-12-03T22:01:25.491Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:11:14.583Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:11:14.606Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:11:14.617Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:11:14.627Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:11:14.638Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:12:39.299Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:12:39.323Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:12:39.338Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:12:39.347Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:12:39.358Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:12:51.671Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:12:51.685Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:12:51.697Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:12:51.702Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:12:51.714Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:13:31.159Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:13:31.179Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:13:31.193Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:13:31.199Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:13:31.211Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:14:28.434Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:14:28.454Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:14:28.465Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:14:28.471Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:14:28.483Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:14:28.734Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:14:28.757Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:14:28.765Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:14:28.776Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:15:01.805Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:15:01.834Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:15:01.845Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:15:01.860Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:15:01.931Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:15:01.956Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:15:01.972Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:15:01.980Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:15:01.996Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:15:39.695Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:15:39.721Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:15:39.733Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:15:39.754Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:15:39.804Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:15:39.831Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:15:39.847Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:15:39.854Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:15:39.872Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:18:05.135Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:18:05.171Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:18:05.182Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:18:05.200Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:18:05.222Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:18:05.245Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:18:05.261Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:18:05.269Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:18:05.291Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:18:40.297Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:18:40.324Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:18:40.339Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:18:40.357Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:18:40.447Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:18:40.478Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:18:40.495Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:18:40.505Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:18:40.519Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:19:55.002Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:19:55.029Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:19:55.042Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:19:55.066Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:19:55.149Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:19:55.175Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:19:55.190Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:19:55.199Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:19:55.214Z"}
+{"email":"existe@test.com","error":"Usuário já existe","level":"error","message":"Erro ao registrar usuário","timestamp":"2025-12-03T22:19:56.411Z"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"error":"Erro ao criar","level":"error","message":"Erro ao criar evento","timestamp":"2025-12-03T22:19:56.451Z"}
+{"email":"nao@existe.com","error":"Usuário não encontrado","level":"error","message":"Erro ao realizar login","status":401,"timestamp":"2025-12-03T22:19:56.516Z"}
+{"error":"Não possui eventos cadastrados","level":"error","message":"Erro ao consultar eventos","status":404,"timestamp":"2025-12-03T22:19:56.556Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:21:03.389Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:21:03.419Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:21:03.430Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:21:03.446Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:21:03.464Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:21:03.493Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:21:03.508Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:21:03.518Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:21:03.542Z"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"error":"Erro ao criar","level":"error","message":"Erro ao criar evento","timestamp":"2025-12-03T22:21:04.126Z"}
+{"email":"existe@test.com","error":"Usuário já existe","level":"error","message":"Erro ao registrar usuário","timestamp":"2025-12-03T22:21:04.156Z"}
+{"error":"Não possui eventos cadastrados","level":"error","message":"Erro ao consultar eventos","status":404,"timestamp":"2025-12-03T22:21:04.311Z"}
+{"email":"nao@existe.com","error":"Usuário não encontrado","level":"error","message":"Erro ao realizar login","status":401,"timestamp":"2025-12-03T22:21:04.313Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:23:21.965Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:23:21.992Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:23:22.002Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:23:22.019Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:23:22.033Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:23:22.059Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:23:22.079Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:23:22.089Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:23:22.107Z"}
+{"email":"existe@test.com","error":"Usuário já existe","level":"error","message":"Erro ao registrar usuário","timestamp":"2025-12-03T22:23:22.686Z"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"error":"Erro ao criar","level":"error","message":"Erro ao criar evento","timestamp":"2025-12-03T22:23:22.709Z"}
+{"email":"nao@existe.com","error":"Usuário não encontrado","level":"error","message":"Erro ao realizar login","status":401,"timestamp":"2025-12-03T22:23:22.785Z"}
+{"error":"Não possui eventos cadastrados","level":"error","message":"Erro ao consultar eventos","status":404,"timestamp":"2025-12-03T22:23:22.859Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:26:12.231Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:26:12.274Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:26:12.285Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:26:12.300Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:26:12.288Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:26:12.322Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:26:12.337Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:26:12.345Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:26:12.359Z"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"error":"Erro ao criar","level":"error","message":"Erro ao criar evento","timestamp":"2025-12-03T22:26:12.917Z"}
+{"email":"existe@test.com","error":"Usuário já existe","level":"error","message":"Erro ao registrar usuário","timestamp":"2025-12-03T22:26:12.965Z"}
+{"error":"Não possui eventos cadastrados","level":"error","message":"Erro ao consultar eventos","status":404,"timestamp":"2025-12-03T22:26:13.007Z"}
+{"email":"nao@existe.com","error":"Usuário não encontrado","level":"error","message":"Erro ao realizar login","status":401,"timestamp":"2025-12-03T22:26:13.050Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:27:21.426Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:27:21.451Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:27:21.464Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:27:21.484Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:27:21.485Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:27:21.508Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:27:21.529Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:27:21.539Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:27:21.556Z"}
+{"email":"existe@test.com","error":"Usuário já existe","level":"error","message":"Erro ao registrar usuário","timestamp":"2025-12-03T22:27:22.197Z"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"error":"Erro ao criar","level":"error","message":"Erro ao criar evento","timestamp":"2025-12-03T22:27:22.271Z"}
+{"email":"nao@existe.com","error":"Usuário não encontrado","level":"error","message":"Erro ao realizar login","status":401,"timestamp":"2025-12-03T22:27:22.316Z"}
+{"error":"Não possui eventos cadastrados","level":"error","message":"Erro ao consultar eventos","status":404,"timestamp":"2025-12-03T22:27:22.632Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:30:26.520Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:30:26.551Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:30:26.562Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:30:26.580Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:30:26.672Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:30:26.700Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:30:26.719Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:30:26.730Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:30:26.748Z"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"error":"Erro ao criar","level":"error","message":"Erro ao criar evento","timestamp":"2025-12-03T22:30:27.369Z"}
+{"email":"existe@test.com","error":"Usuário já existe","level":"error","message":"Erro ao registrar usuário","timestamp":"2025-12-03T22:30:27.423Z"}
+{"error":"Não possui eventos cadastrados","level":"error","message":"Erro ao consultar eventos","status":404,"timestamp":"2025-12-03T22:30:27.475Z"}
+{"email":"nao@existe.com","error":"Usuário não encontrado","level":"error","message":"Erro ao realizar login","status":401,"timestamp":"2025-12-03T22:30:27.614Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:32:42.386Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:32:42.413Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:32:42.428Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:32:42.452Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:32:42.455Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:32:42.479Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:32:42.491Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:32:42.503Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:32:42.521Z"}
+{"email":"existe@test.com","error":"Usuário já existe","level":"error","message":"Erro ao registrar usuário","timestamp":"2025-12-03T22:32:43.032Z"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"error":"Erro ao criar","level":"error","message":"Erro ao criar evento","timestamp":"2025-12-03T22:32:43.033Z"}
+{"error":"Não possui eventos cadastrados","level":"error","message":"Erro ao consultar eventos","status":404,"timestamp":"2025-12-03T22:32:43.116Z"}
+{"email":"nao@existe.com","error":"Usuário não encontrado","level":"error","message":"Erro ao realizar login","status":401,"timestamp":"2025-12-03T22:32:43.116Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:33:52.205Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:33:52.233Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:33:52.246Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:33:52.277Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:33:52.360Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:33:52.383Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:33:52.399Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:33:52.406Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:33:52.421Z"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"error":"Erro ao criar","level":"error","message":"Erro ao criar evento","timestamp":"2025-12-03T22:33:52.937Z"}
+{"email":"existe@test.com","error":"Usuário já existe","level":"error","message":"Erro ao registrar usuário","timestamp":"2025-12-03T22:33:52.971Z"}
+{"error":"Não possui eventos cadastrados","level":"error","message":"Erro ao consultar eventos","status":404,"timestamp":"2025-12-03T22:33:53.017Z"}
+{"email":"nao@existe.com","error":"Usuário não encontrado","level":"error","message":"Erro ao realizar login","status":401,"timestamp":"2025-12-03T22:33:53.044Z"}
+{"level":"error","message":{"action":"createEvento_error","error":"Erro DB"},"timestamp":"2025-12-03T22:35:10.243Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:35:10.266Z"}
+{"level":"error","message":{"action":"buscarEventos_error","error":"Não possui eventos cadastrados"},"timestamp":"2025-12-03T22:35:10.277Z"}
+{"level":"error","message":{"action":"deleteEvento_error","error":"Erro ao deletar","id":1},"timestamp":"2025-12-03T22:35:10.294Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Usuário já existe"},"timestamp":"2025-12-03T22:35:10.360Z"}
+{"level":"error","message":{"action":"createUser_error","error":"Já existe um administrador cadastrado"},"timestamp":"2025-12-03T22:35:10.386Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:35:10.405Z"}
+{"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:35:10.412Z"}
+{"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:35:10.426Z"}

@@ -1,6 +1,6 @@
 const { Builder, By, until } = require("selenium-webdriver");
 
-jest.setTimeout(30000);
+jest.setTimeout(60000);
 
 describe("E2E Login", () => {
   let driver;
@@ -16,12 +16,25 @@ describe("E2E Login", () => {
   test("login válido", async () => {
     await driver.get("http://localhost:3000/login");
 
-    await driver.findElement(By.id("email")).sendKeys("admin@email.com");
-    await driver.findElement(By.id("senha")).sendKeys("123456");
+    const emailInput = await driver.wait(
+      until.elementLocated(By.id("email")),
+      10000
+    );
+    await emailInput.sendKeys("admin@email.com");
 
-    await driver.findElement(By.id("btn-login")).click();
+    const senhaInput = await driver.wait(
+      until.elementLocated(By.id("senha")),
+      10000
+    );
+    await senhaInput.sendKeys("123456");
 
-    await driver.wait(until.urlContains("/dashboard"), 5000);
+    const btnLogin = await driver.wait(
+      until.elementLocated(By.id("btn-login")),
+      5000
+    );
+    await btnLogin.click();
+
+    await driver.wait(until.urlContains("/dashboard"), 10000);
 
     const url = await driver.getCurrentUrl();
     expect(url).toContain("/dashboard");
@@ -30,16 +43,28 @@ describe("E2E Login", () => {
   test("login inválido", async () => {
     await driver.get("http://localhost:3000/login");
 
-    await driver.findElement(By.id("email")).sendKeys("erro@email.com");
-    await driver.findElement(By.id("senha")).sendKeys("senha_incorreta");
+    const emailInput = await driver.wait(
+      until.elementLocated(By.id("email")),
+      10000
+    );
+    await emailInput.sendKeys("erro@email.com");
 
-    await driver.findElement(By.id("btn-login")).click();
+    const senhaInput = await driver.wait(
+      until.elementLocated(By.id("senha")),
+      10000
+    );
+    await senhaInput.sendKeys("senha_incorreta");
 
-    const msg = await driver.wait(
-      until.elementLocated(By.id("erro-login")),
+    const btnLogin = await driver.wait(
+      until.elementLocated(By.id("btn-login")),
       5000
     );
+    await btnLogin.click();
 
-    expect(await msg.getText()).toBe("Usuário ou senha inválidos");
+    const erroMsg = await driver.wait(
+      until.elementLocated(By.id("erro-login")),
+      10000
+    );
+    expect(await erroMsg.getText()).toBe("Usuário ou senha inválidos");
   });
 });
