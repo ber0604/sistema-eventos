@@ -33,23 +33,36 @@ Este projeto é um sistema de gestão de eventos desenvolvido como parte de um t
 1. Clone o repositório:  
 git clone https://github.com/ber0604/sistema-eventos.git
 
-2. Criar banco de dados que está no arquivo database.sql
+2. Criar banco de dados chamado sistema_eventos
+CREATE SCHEMA sistema_eventos;
 
 3. Configurar acesso banco de dados no arquivo .env
 
-4. Criar dependências:
-npm install bcryptjs helmet cors dotenv react-router-dom axios express mysql2 swagger-ui-express yamljs
+4. Criar dependências em ambas pastas /frontend e na /backend
+npm install
 
-5. Entrar na pasta /frontend e na /backend em diferentes terminais e rodar o comando:
+4.1 na pasta backend instalar o jsonwebtoken:
+npm install jsonwebtoken
+
+4.2 na pasta frontend instalar o vite
+npm install vite --save-dev
+
+5. Rodar migrations e seeds
+npx prisma migrate dev
+npx prisma db seed
+
+6. Entrar na pasta /frontend e na /backend em diferentes terminais e rodar o comando:
 npm run dev
 
-6. Entrar na pasta /backend em outro terminal:
+7. Entrar na pasta /backend em outro terminal:
 npx prisma migrate dev --name init
 npx prisma db seed
 ```
 
 ## Testes
   Acessar rota (http://localhost:${PORT}/api-docs) e utilizar o Swagger para testes da API Backend
+  Rodar npm run test para ver os testes unitarios, integracao e sellenium
+
 
 
 
