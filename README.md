@@ -54,9 +54,6 @@ npx prisma db seed
 6. Entrar na pasta /frontend e na /backend em diferentes terminais e rodar o comando:
 npm run dev
 
-7. Entrar na pasta /backend em outro terminal:
-npx prisma migrate dev --name init
-npx prisma db seed
 ```
 
 ## Testes
@@ -64,6 +61,7 @@ npx prisma db seed
 
   
   Rodar npm run test para ver os testes unitarios, integracao e sellenium
+
 
 
 
