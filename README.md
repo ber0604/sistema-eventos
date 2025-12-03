@@ -61,7 +61,10 @@ npx prisma db seed
 
 ## Testes
   Acessar rota (http://localhost:${PORT}/api-docs) e utilizar o Swagger para testes da API Backend
+
+  
   Rodar npm run test para ver os testes unitarios, integracao e sellenium
+
 
 
 
