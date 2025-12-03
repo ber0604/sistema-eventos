@@ -882,3 +882,29 @@
 {"level":"info","message":{"action":"getUsers_start"},"timestamp":"2025-12-03T22:35:10.422Z"}
 {"level":"warn","message":{"action":"getUsers_empty"},"timestamp":"2025-12-03T22:35:10.424Z"}
 {"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:35:10.426Z"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"ip":"::ffff:127.0.0.1","level":"info","message":"Requisição recebida: POST /eventos","timestamp":"2025-12-03T22:35:10.765Z"}
+{"id":10,"level":"info","message":"Evento criado com sucesso","timestamp":"2025-12-03T22:35:10.793Z","titulo":"Ação"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"ip":"::ffff:127.0.0.1","level":"info","message":"Requisição recebida: POST /eventos","timestamp":"2025-12-03T22:35:10.839Z"}
+{"email":"bernardo@test.com","ip":"::ffff:127.0.0.1","level":"info","message":"Requisição recebida: POST /register","timestamp":"2025-12-03T22:35:10.820Z"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"error":"Erro ao criar","level":"error","message":"Erro ao criar evento","timestamp":"2025-12-03T22:35:10.842Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Requisição recebida: GET /usuarios","timestamp":"2025-12-03T22:35:10.814Z"}
+{"email":"bernardo@test.com","id":1,"level":"info","message":"Usuário registrado com sucesso","timestamp":"2025-12-03T22:35:10.845Z"}
+{"level":"info","message":{"action":"getUsers_start"},"timestamp":"2025-12-03T22:35:10.847Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Requisição recebida: GET /eventos","timestamp":"2025-12-03T22:35:10.876Z"}
+{"level":"info","message":{"action":"getUsers_success","total":3},"timestamp":"2025-12-03T22:35:10.886Z"}
+{"level":"info","message":"Eventos consultados com sucesso","timestamp":"2025-12-03T22:35:10.882Z","total":1}
+{"email":"existe@test.com","ip":"::ffff:127.0.0.1","level":"info","message":"Requisição recebida: POST /register","timestamp":"2025-12-03T22:35:10.891Z"}
+{"email":"existe@test.com","error":"Usuário já existe","level":"error","message":"Erro ao registrar usuário","timestamp":"2025-12-03T22:35:10.893Z"}
+{"level":"info","message":"Usuários consultados com sucesso","timestamp":"2025-12-03T22:35:10.888Z","total":3}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Requisição recebida: GET /eventos","timestamp":"2025-12-03T22:35:10.912Z"}
+{"error":"Não possui eventos cadastrados","level":"error","message":"Erro ao consultar eventos","status":404,"timestamp":"2025-12-03T22:35:10.914Z"}
+{"email":"a@a.com","ip":"::ffff:127.0.0.1","level":"info","message":"Requisição recebida: POST /login","timestamp":"2025-12-03T22:35:10.920Z"}
+{"email":"a@a.com","level":"info","message":"Login bem-sucedido","role":"user","timestamp":"2025-12-03T22:35:10.922Z"}
+{"id":"1","ip":"::ffff:127.0.0.1","level":"info","message":"Requisição recebida: DELETE /eventos/:id","timestamp":"2025-12-03T22:35:10.941Z"}
+{"id":"1","level":"info","message":"Evento excluído com sucesso","timestamp":"2025-12-03T22:35:10.943Z"}
+{"email":"nao@existe.com","ip":"::ffff:127.0.0.1","level":"info","message":"Requisição recebida: POST /login","timestamp":"2025-12-03T22:35:10.955Z"}
+{"email":"nao@existe.com","error":"Usuário não encontrado","level":"error","message":"Erro ao realizar login","status":401,"timestamp":"2025-12-03T22:35:10.957Z"}
+{"id":"1","ip":"::ffff:127.0.0.1","level":"info","message":"Requisição recebida: DELETE /eventos/:id","timestamp":"2025-12-03T22:35:10.977Z"}
+{"id":"1","level":"warn","message":"Tentativa de excluir evento inexistente","timestamp":"2025-12-03T22:35:10.980Z"}
+{"level":"info","message":{"method":"GET","url":"/login"},"timestamp":"2025-12-03T22:35:53.608Z"}
+{"level":"info","message":{"method":"GET","url":"/login"},"timestamp":"2025-12-03T22:36:03.889Z"}

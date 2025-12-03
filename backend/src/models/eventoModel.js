@@ -23,11 +23,10 @@ class EventoModel {
   static async delete(id) {
     try {
       await prisma.evento.delete({
-        where: { id },
+        where: { id: Number(id) }
       });
       return true;
     } catch (error) {
-      // Prisma lança erro se não encontrar — tratamos isso como "não existe"
       if (error.code === "P2025") return false;
       throw error;
     }

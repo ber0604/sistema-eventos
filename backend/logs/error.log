@@ -178,3 +178,7 @@
 {"level":"error","message":{"action":"loginUser_error","email":"x@x.com","error":"Usuário não encontrado"},"timestamp":"2025-12-03T22:35:10.405Z"}
 {"level":"error","message":{"action":"loginUser_error","email":"a@a.com","error":"Senha inválida"},"timestamp":"2025-12-03T22:35:10.412Z"}
 {"level":"error","message":{"action":"getUsers_error","error":"Não possui voluntários cadastrados"},"timestamp":"2025-12-03T22:35:10.426Z"}
+{"body":{"data_evento":"2025-01-01","titulo":"Ação"},"error":"Erro ao criar","level":"error","message":"Erro ao criar evento","timestamp":"2025-12-03T22:35:10.842Z"}
+{"email":"existe@test.com","error":"Usuário já existe","level":"error","message":"Erro ao registrar usuário","timestamp":"2025-12-03T22:35:10.893Z"}
+{"error":"Não possui eventos cadastrados","level":"error","message":"Erro ao consultar eventos","status":404,"timestamp":"2025-12-03T22:35:10.914Z"}
+{"email":"nao@existe.com","error":"Usuário não encontrado","level":"error","message":"Erro ao realizar login","status":401,"timestamp":"2025-12-03T22:35:10.957Z"}
